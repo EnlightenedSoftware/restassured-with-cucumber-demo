@@ -12,6 +12,9 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<rest-assured.version>4.2.0</rest-assured.version>
+		//TODO upgrade
+		<cucumber.version>1.2.6</cucumber.version>
 	</properties>
 
 	<dependencies>
@@ -19,49 +22,62 @@
 		<dependency>
 			<groupId>io.rest-assured</groupId>
 			<artifactId>rest-assured</artifactId>
-			<version>RELEASE</version>
+			<version>${rest-assured.version}</version>
 			<scope>test</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>io.rest-assured</groupId>
 			<artifactId>json-path</artifactId>
-			<version>RELEASE</version>
+			<version>${rest-assured.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>io.rest-assured</groupId>
 			<artifactId>xml-path</artifactId>
-			<version>RELEASE</version>
+			<version>${rest-assured.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>junit</groupId>
-			<artifactId>junit-dep</artifactId>
-			<version>RELEASE</version>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>${cucumber.version}</version>
+			<type>pom</type>
 		</dependency>
 
 		<dependency>
-			<groupId>info.cukes</groupId>
-			<artifactId>cucumber-java8</artifactId>
-			<version>RELEASE</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>info.cukes</groupId>
+			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-junit</artifactId>
-			<version>RELEASE</version>
+			<version>${cucumber.version}</version>
 			<scope>test</scope>
 		</dependency>
 
 		<dependency>
-			<groupId>info.cukes</groupId>
+			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-picocontainer</artifactId>
-			<version>RELEASE</version>
+			<version>${cucumber.version}</version>
 			<scope>test</scope>
 		</dependency>
 
 	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.7.0</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
